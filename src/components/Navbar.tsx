@@ -3,6 +3,7 @@ import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,10 +68,10 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/")} 
           className="flex items-center group cursor-pointer shrink-0"
         >
-          <img 
-            src="/logo.png" 
-            alt="ISE Logo" 
-            className="h-16 w-auto group-hover:scale-105 transition-transform"
+         <img 
+            src="/logo.jpg"
+            alt="ISE Logo"
+            className="h-16 w-auto object-contain group-hover:scale-105 transition-transform"
           />
         </button>
 
@@ -85,7 +86,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => handleLinkClick(link.href)}
-                className="text-[13px] font-medium hover:text-gold transition-colors flex items-center gap-1 text-white"
+                className="text-[18px] font-medium hover:text-gold transition-colors flex items-center gap-1 text-white"
               >
                 {link.name}
                 {link.dropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === link.name ? "rotate-180" : ""}`} />}
